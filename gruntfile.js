@@ -24,15 +24,17 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         browser: true,
+        debug: true,
         globals: {
-          console: true
+          console: true,
+          Chess: true
         }
       },
       gruntfile: {
         src: 'Gruntfile.js'
       },
       scripts: {
-        src: ['lib/**/*.js']
+        src: ['lib/**/*.js', '!lib/vendors/*']
       }
     },
     watch: {
