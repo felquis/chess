@@ -6,15 +6,15 @@ HTML Chess, um projeto experimental.
 ## O inicio
 O The Chess começou quando no www2013, teve um desafio que era criar um tabuleiro de Xadrez com HTML, CSS sem imagens, como jurados do desafio tinha nada menos que o cara que criou o CSS o Bert Bos. O desafio foi aceito.
 
-## Como rodar
+## Como rodar local
 
-Você precisa do GIT e NodeJS previamente instalado, depois, você precisa do Grunt-cli instalado.
+Você precisa do [GIT](http://git-scm.com/) e [NodeJS](http://nodejs.org/) previamente instalado, depois, você precisa do [Grunt-CLI](https://github.com/gruntjs/grunt-cli) instalado.
 
-1 - Clone o repositório e entre na pasta do repositório
-`git@github.com:felquis/the-chess.git && cd the-chess`
+1. Clone o repositório e entre na pasta do repositório
+	`git@github.com:felquis/the-chess.git && cd the-chess`
 
-2 - Instale toda as dependências e deixe a mágica acontecer
-'npm install'
+1. Instale toda as dependências e deixe a mágica acontecer
+	`npm install`
 
 ## History log
 
