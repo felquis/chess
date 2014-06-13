@@ -1,7 +1,5 @@
 /*
-    WWW2013 Rio de Janeiro
-    CSS Challenges
-    Team: Vanessa Me Tonini & Ofelquis Gimenes;
+    Let's :dancer:
 */
 
 @squareLetters: a, b, c, d, e, f, g, h;
@@ -13,13 +11,17 @@
 html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .chessboard {
     width: @squareWidth * 8;
     height: @squareHeight * 8;
     background: silver;
-    margin: 50px auto;
     position: relative;
     counter-reset: numero 9;
 }
