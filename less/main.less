@@ -21,12 +21,13 @@ html, body {
     background: silver;
     margin: 50px auto;
     position: relative;
+    counter-reset: numero 9;
 }
 
 /*
     Squares
 */
-.chessboard .square {
+.square {
     width: @squareWidth;
     height: @squareHeight;
     float: left;
@@ -35,24 +36,17 @@ html, body {
     position: relative;
 }
 
-.chessboard .line-square:nth-child(odd) .square:nth-child(odd),
-.chessboard .line-square:nth-child(even) .square:nth-child(even) {
+.square-line:nth-child(odd) .square:nth-child(odd),
+.square-line:nth-child(even) .square:nth-child(even) {
     background: #fff;
 }
 
-/*
-    Numbers
-*/
-.chessboard {
-    counter-reset: numero 9;
-}
-
-.chessboard .line-square {
+.square-line {
     position: relative;
     float: left;
 }
 
-.chessboard .line-square:before {
+.square-line:before {
     counter-increment: numero -1;
     content : counters(numero, "");
     top: 26px;
@@ -63,45 +57,45 @@ html, body {
 /*
     Letters
 */
-.chessboard .line-square:nth-child(8) .square::before {
+.square-line:nth-child(8) .square::before {
     position: absolute;
     font-style: normal;
     bottom: -26px;
     left: 33px;
 }
-.chessboard .line-square:nth-child(8) .square {
+.square-line:nth-child(8) .square {
     position: relative;
 }
 
-.chessboard .line-square:nth-child(8) .square:nth-child(1)::before {
+.square-line:nth-child(8) .square:nth-child(1)::before {
     content: 'a';
 }
 
-.chessboard .line-square:nth-child(8) .square:nth-child(2)::before {
+.square-line:nth-child(8) .square:nth-child(2)::before {
     content: 'b';
 }
 
-.chessboard .line-square:nth-child(8) .square:nth-child(3)::before {
+.square-line:nth-child(8) .square:nth-child(3)::before {
     content: 'c';
 }
 
-.chessboard .line-square:nth-child(8) .square:nth-child(4)::before {
+.square-line:nth-child(8) .square:nth-child(4)::before {
     content: 'd';
 }
 
-.chessboard .line-square:nth-child(8) .square:nth-child(5)::before {
+.square-line:nth-child(8) .square:nth-child(5)::before {
     content: 'e';
 }
 
-.chessboard .line-square:nth-child(8) .square:nth-child(6)::before {
+.square-line:nth-child(8) .square:nth-child(6)::before {
     content: 'f';
 }
 
-.chessboard .line-square:nth-child(8) .square:nth-child(7)::before {
+.square-line:nth-child(8) .square:nth-child(7)::before {
     content: 'g';
 }
 
-.chessboard .line-square:nth-child(8) .square:nth-child(8)::before {
+.square-line:nth-child(8) .square:nth-child(8)::before {
     content: 'h';
 }
 
@@ -109,56 +103,56 @@ html, body {
     Piece's images
 */
 /* Pawn */
-.chessboard .pawn.white:before {
+.pawn.white:before {
     content: "\2659";
 }
 
-.chessboard .pawn.black:before {
+.pawn.black:before {
     content: "\265F";
 }
 
 /* Knight */
-.chessboard .knight.white:before {
+.knight.white:before {
     content: "\2658";
 }
 
-.chessboard .knight.black:before {
+.knight.black:before {
     content: "\265E";
 }
 
 /* Bishop */
-.chessboard .bishop.white:before {
+.bishop.white:before {
     content: "\2657";
 }
 
-.chessboard .bishop.black:before {
+.bishop.black:before {
     content: "\265D";
 }
 
 /* Rook */
-.chessboard .rook.white:before {
+.rook.white:before {
     content: "\2656";
 }
 
-.chessboard .rook.black:before {
+.rook.black:before {
     content: "\265C";
 }
 
 /* Queen */
-.chessboard .queen.white:before {
+.queen.white:before {
     content: "\2655";
 }
 
-.chessboard .queen.black:before {
+.queen.black:before {
     content: "\265B";
 }
 
 /* King */
-.chessboard .king.white:before {
+.king.white:before {
     content: "\2654";
 }
 
-.chessboard .king.black:before {
+.king.black:before {
     content: "\265A";
 }
 
@@ -171,14 +165,14 @@ html, body {
     background: linear-gradient(to right, #533221 0%,#76472b 3%,#533221 5%,#76472b 8%,#533221 10%,#76472b 13%,#533221 16%,#76472b 24%,#533221 26%,#76472b 29%,#533221 33%,#76472b 37%,#533221 41%,#76472b 44%,#533221 48%,#76472b 52%,#533221 59%,#76472b 68%,#533221 73%,#76472b 78%,#533221 81%,#76472b 83%,#533221 86%,#76472b 88%,#533221 90%,#76472b 93%,#533221 95%,#76472b 98%,#533221 100%);
 }
 
-.chessboard.wood .line-square:nth-child(odd) .square:nth-child(odd),
-.chessboard.wood .line-square:nth-child(even) .square:nth-child(even) {
+.wood .square-line:nth-child(odd) .square:nth-child(odd),
+.wood .square-line:nth-child(even) .square:nth-child(even) {
     background: #d6ad7c;
     background: -webkit-gradient(linear, left top, right top, color-stop(1%,#d6ad7c), color-stop(5%,#dcb687), color-stop(6%,#dab282), color-stop(10%,#d4aa7a), color-stop(14%,#e0ba8d), color-stop(17%,#d4aa7a), color-stop(21%,#e0ba8d), color-stop(24%,#d4aa7a), color-stop(26%,#e0ba8d), color-stop(29%,#d4aa7a), color-stop(32%,#e0ba8d), color-stop(34%,#d4aa7a), color-stop(37%,#d4aa7a), color-stop(39%,#e0ba8d), color-stop(46%,#d4aa7a), color-stop(46%,#e0ba8d), color-stop(50%,#e0ba8d), color-stop(54%,#d4aa7a), color-stop(56%,#e0ba8d), color-stop(64%,#d4aa7a), color-stop(69%,#e0ba8d), color-stop(70%,#d4aa7a), color-stop(80%,#e0ba8d), color-stop(83%,#d4aa7a), color-stop(86%,#e0ba8d), color-stop(89%,#ddb07c), color-stop(96%,#e0ba8d), color-stop(97%,#e0ba8d), color-stop(100%,#d6ad7c));
     background: linear-gradient(to right, #d6ad7c 1%,#dcb687 5%,#dab282 6%,#d4aa7a 10%,#e0ba8d 14%,#d4aa7a 17%,#e0ba8d 21%,#d4aa7a 24%,#e0ba8d 26%,#d4aa7a 29%,#e0ba8d 32%,#d4aa7a 34%,#d4aa7a 37%,#e0ba8d 39%,#d4aa7a 46%,#e0ba8d 46%,#e0ba8d 50%,#d4aa7a 54%,#e0ba8d 56%,#d4aa7a 64%,#e0ba8d 69%,#d4aa7a 70%,#e0ba8d 80%,#d4aa7a 83%,#e0ba8d 86%,#ddb07c 89%,#e0ba8d 96%,#e0ba8d 97%,#d6ad7c 100%);
 }
 
-.chessboard.wood .piece.white {
+.wood .piece.white {
     color: #FFF;
 }
 
@@ -186,31 +180,31 @@ html, body {
     Piece's images for Wood theme
 */
 /* Pawn */
-.chessboard.wood .pawn.white:before {
+.wood .pawn.white:before {
     content: "\265F";
 }
 
 /* Knight */
-.chessboard.wood .knight.white:before {
+.wood .knight.white:before {
     content: "\265E";
 }
 
 /* Bishop */
-.chessboard.wood .bishop.white:before {
+.wood .bishop.white:before {
     content: "\265D";
 }
 
 /* Rook */
-.chessboard.wood .rook.white:before {
+.wood .rook.white:before {
     content: "\265C";
 }
 
 /* Queen */
-.chessboard.wood .queen.white:before {
+.wood .queen.white:before {
     content: "\265B";
 }
 
 /* King */
-.chessboard.wood .king.white:before {
+.wood .king.white:before {
     content: "\265A";
 }
