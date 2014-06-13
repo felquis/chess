@@ -4,6 +4,10 @@
     Team: Vanessa Me Tonini & Ofelquis Gimenes;
 */
 
+@squareLetters: a, b, c, d, e, f, g, h;
+@squareHeight: 73px;
+@squareWidth: 73px;
+
 @import 'create-pieces-positions.less';
 
 html, body {
@@ -12,8 +16,8 @@ html, body {
 }
 
 .chessboard {
-    width: 593px;
-    height: 593px;
+    width: @squareWidth * 8;
+    height: @squareHeight * 8;
     background: silver;
     margin: 50px auto;
     position: relative;
@@ -23,28 +27,17 @@ html, body {
     Squares
 */
 .chessboard .square {
-    width: 73px;
-    height: 73px;
+    width: @squareWidth;
+    height: @squareHeight;
     float: left;
-    border: 1px solid;
+    outline: 1px solid #000;
     background: #e0e0e0;
+    position: relative;
 }
 
 .chessboard .line-square:nth-child(odd) .square:nth-child(odd),
 .chessboard .line-square:nth-child(even) .square:nth-child(even) {
     background: #fff;
-}
-
-.chessboard .line-square .square {
-    border-right: 0;
-    border-bottom: 0;
-}
-
-.chessboard .line-square .square:last-child {
-    border-right: 1px solid
-}
-.chessboard .line-square:last-child .square {
-    border-bottom: 1px solid
 }
 
 /*
