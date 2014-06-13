@@ -11,10 +11,12 @@ O The Chess começou quando no www2013, teve um desafio que era criar um tabulei
 Você precisa do [GIT](http://git-scm.com/) e [NodeJS](http://nodejs.org/) previamente instalado, depois, você precisa do [Grunt-CLI](https://github.com/gruntjs/grunt-cli) instalado.
 
 1. Clone o repositório e entre na pasta do repositório
-	`git@github.com:felquis/the-chess.git && cd the-chess`
+
+    `git@github.com:felquis/the-chess.git && cd the-chess`
 
 1. Instale toda as dependências e deixe a mágica acontecer
-	`npm install`
+
+    `npm install`
 
 ## History log
 
