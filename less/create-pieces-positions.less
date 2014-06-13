@@ -1,0 +1,76 @@
+/***
+    O resultado será em classes no CSS como:
+    .square-a-1
+    .square-a-2
+    .square-h-6
+    ...
+
+    Posiciona todas as peças no tabuleiro com base em um tabuleiro
+    com casas de tamanho 74x74
+
+***/
+
+@squareLetters: a, b, c, d, e, f, g, h;
+@squareHeight: 74px;
+@squareWidth: 74px;
+
+.piece {
+    position: absolute;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    width: @squareWidth;
+    height: @squareHeight;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    &:before {
+        font-size: 50px;
+        font-style: normal;
+    }
+}
+
+/***
+    Está funcão recebe dois parametros
+    @letter: que é a letra de uma casa do tabuleiro;
+    @number: que é o número de uma casa do tabuleiro;
+
+    A funcão calcula o bottom e top para posicionar a peça
+    no tabuleiro
+***/
+.writeSquarePosition(@letter, @number) {
+    @letterIndex: indexof(@letter, @squareLetters);
+    @rowNumber: @number - 1;
+
+    .square-@{letter}-@{number} {
+        bottom: @squareHeight * @rowNumber;
+        left: @squareWidth * @letterIndex;
+    }
+}
+
+/***
+    Este loop percorre a lista @squareLetters
+***/
+.lettersOfSquare(@counter: length(@squareLetters)) when (@counter > 0) {
+    .lettersOfSquare((@counter - 1));
+
+    @letter: extract(@squareLetters, @counter);
+
+    // Percorre as 8 casas desta letra
+    .numbersOfSquares(@letter)
+}
+
+/***
+    Este loop percorre as 8 casas de cada letra
+
+    A função resposável por escrever a classe no CSS é a .writeSquarePosition
+***/
+.numbersOfSquares(@squareLetter, @numbersOfThisSquare: 1) when (@numbersOfThisSquare < 9) {
+
+    // Escreve a classe dessa casa no CSS
+    .writeSquarePosition(@squareLetter, @numbersOfThisSquare);
+
+    .numbersOfSquares(@squareLetter, @numbersOfThisSquare + 1);
+}
+
+.lettersOfSquare();

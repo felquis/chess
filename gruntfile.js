@@ -54,6 +54,13 @@ module.exports = function(grunt) {
       }
     },
     less: {
+      options: {
+        customFunctions: {
+          indexof: function (less, value, array) {
+            return new less.tree.Dimension(array.value.indexOf(value));
+          }
+        }
+      },
       development: {
         files: {
           "css/main.css": "less/main.less"
