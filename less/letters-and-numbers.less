@@ -1,0 +1,70 @@
+
+/*
+    Numbers
+*/
+.square-line {
+    position: relative;
+    display: flex;
+    height: @squareHeight;
+    width: 100%;
+}
+
+.square-line:before {
+    counter-increment: numero -1;
+    content : counters(numero, "");
+    height: @squareHeight;
+    width: (@squareHeight / 2);
+    left: -(@squareHeight / 2);
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+/*
+    Letters
+*/
+.square-line:nth-child(8) .square::before {
+    position: absolute;
+    font-style: normal;
+    bottom: -(@squareHeight / 2);
+    width: @squareWidth;
+    height: @squareHeight / 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.square-line:nth-child(8) .square {
+    position: relative;
+}
+
+.square-line:nth-child(8) .square:nth-child(1)::before {
+    content: 'a';
+}
+
+.square-line:nth-child(8) .square:nth-child(2)::before {
+    content: 'b';
+}
+
+.square-line:nth-child(8) .square:nth-child(3)::before {
+    content: 'c';
+}
+
+.square-line:nth-child(8) .square:nth-child(4)::before {
+    content: 'd';
+}
+
+.square-line:nth-child(8) .square:nth-child(5)::before {
+    content: 'e';
+}
+
+.square-line:nth-child(8) .square:nth-child(6)::before {
+    content: 'f';
+}
+
+.square-line:nth-child(8) .square:nth-child(7)::before {
+    content: 'g';
+}
+
+.square-line:nth-child(8) .square:nth-child(8)::before {
+    content: 'h';
+}

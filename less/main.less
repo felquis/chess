@@ -7,6 +7,7 @@
 @squareWidth: 73px;
 
 @import 'create-pieces-positions.less';
+@import 'letters-and-numbers.less';
 
 html, body {
     margin: 0;
@@ -32,7 +33,6 @@ html, body {
 .square {
     width: @squareWidth;
     height: @squareHeight;
-    float: left;
     outline: 1px solid #000;
     background: #e0e0e0;
     position: relative;
@@ -41,64 +41,6 @@ html, body {
 .square-line:nth-child(odd) .square:nth-child(odd),
 .square-line:nth-child(even) .square:nth-child(even) {
     background: #fff;
-}
-
-.square-line {
-    position: relative;
-    float: left;
-}
-
-.square-line:before {
-    counter-increment: numero -1;
-    content : counters(numero, "");
-    top: 26px;
-    left: -20px;
-    position: absolute;
-}
-
-/*
-    Letters
-*/
-.square-line:nth-child(8) .square::before {
-    position: absolute;
-    font-style: normal;
-    bottom: -26px;
-    left: 33px;
-}
-.square-line:nth-child(8) .square {
-    position: relative;
-}
-
-.square-line:nth-child(8) .square:nth-child(1)::before {
-    content: 'a';
-}
-
-.square-line:nth-child(8) .square:nth-child(2)::before {
-    content: 'b';
-}
-
-.square-line:nth-child(8) .square:nth-child(3)::before {
-    content: 'c';
-}
-
-.square-line:nth-child(8) .square:nth-child(4)::before {
-    content: 'd';
-}
-
-.square-line:nth-child(8) .square:nth-child(5)::before {
-    content: 'e';
-}
-
-.square-line:nth-child(8) .square:nth-child(6)::before {
-    content: 'f';
-}
-
-.square-line:nth-child(8) .square:nth-child(7)::before {
-    content: 'g';
-}
-
-.square-line:nth-child(8) .square:nth-child(8)::before {
-    content: 'h';
 }
 
 /*
