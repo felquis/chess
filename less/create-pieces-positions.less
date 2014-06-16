@@ -35,7 +35,11 @@
     no tabuleiro
 ***/
 .writeSquarePosition(@letter, @number) {
-    @letterIndex: indexof(@letter, @squareLetters);
+    // Expõe a variável @-
+    .index(@squareLetters, @letter);
+
+    // -1 Para começar no indíce 0
+    @letterIndex: @- - 1;
     @rowNumber: @number - 1;
 
     .square-@{letter}-@{number} {
