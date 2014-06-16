@@ -1,0 +1,25 @@
+@import '../../vars/_prefix';
+@import '../../../fn/_in';
+.keyframes(@name) {
+    & {
+        .in(@prefixes, -webkit-);
+        & when (@-) {
+
+            @-webkit-keyframes @name {
+                .-frames(-webkit-);
+            }
+        }
+    }
+    & {
+        .in(@prefixes, -moz-);
+        & when (@-) {
+
+            @-moz-keyframes @name {
+                .-frames(-moz-);
+            }
+        }
+    }
+    @keyframes @name {
+        .-frames();
+    }
+}

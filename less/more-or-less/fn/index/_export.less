@@ -1,0 +1,6 @@
+@import '../_for';
+.index(@array, @value, @fallback: -1) {
+    .for(@array); .-each(...) {}
+    .-each(~'@{value}') {@-: @i}
+    .-() {@-: @fallback} .-;
+}

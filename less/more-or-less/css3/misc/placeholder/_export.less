@@ -1,0 +1,29 @@
+@import '../../vars/_prefix';
+@import '../../../fn/_for';
+@import '../../../fn/_in';
+.placeholder(@rules) {
+    @vendorPrefixes: ':-webkit-', ':-ms-';
+    @vendorPrefixesMoz:  ':-moz-', '-moz-';
+    .for(@vendorPrefixes);.-each(@i) {
+        @prefix: replace('@{i}', ':', '');
+        .inArray(@prefixes, @prefix);
+        & when (@-) {
+            @selector: e(':@{i}input-placeholder');
+            &@{selector} {
+                @rules();
+            }
+        }
+    }
+    .scope({
+        .for(@vendorPrefixesMoz);.-each(@i) {
+            @prefix: replace('@{i}', ':', '');
+            .in(@prefixes, @prefix);
+            & when (@-) {
+                @selector: e(':@{i}placeholder');
+                &@{selector} {
+                    @rules();
+                }
+            }
+        }
+    });
+}

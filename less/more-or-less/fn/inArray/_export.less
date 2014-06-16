@@ -1,0 +1,6 @@
+@import '../_for';
+.inArray(@array, @value) {
+    .for(@array); .-each(...) {}
+    .-each(~'@{value}') {@-: true}
+    .-() {@-: false} .-;
+}

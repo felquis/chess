@@ -1,0 +1,13 @@
+.join(...) {}
+.join(@arr) {.join(@word, '');}
+.join(@arr, @glue) {
+    .join(@word, @arr, @glue, @n) when (@n >= 0) {
+        .-return(@wordResult, @n2) when (@n2 = 0) {@string: ~'@{wordResult}';}
+        .-return(@word, @n);
+        @add: extract(@arr, @n);
+        .join('@{add}@{glue}@{word}', @arr, @glue, (@n - 1));
+    }
+    @last: extract(@arr, length(@arr));
+    .join(@last, @arr, @glue, (length(@arr) - 1));
+}
+

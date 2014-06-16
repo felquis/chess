@@ -1,0 +1,10 @@
+@import '../_background-image';
+.radial-gradient(@start, @end) {
+    & when (@svg-fallback) {
+        background-image: svg-gradient(ellipse at center, @start, @end);
+    }
+    & when (@webkit-legacy) {
+        background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(@start), to(@end));
+    }
+    .background-image(radial-gradient(closest-corner, @start, @end));
+}

@@ -1,0 +1,6 @@
+@import '../../helpers/_prefix';
+.transition-property(@values) {
+    @vendorPrefixes: -webkit-, -moz-, -o-, '';
+    @prop: transition-property;
+    .prefix(',');
+}

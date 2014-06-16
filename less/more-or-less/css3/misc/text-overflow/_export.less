@@ -1,0 +1,15 @@
+@import '../../helpers/_prefix';
+.text-overflow(@values) {
+    @vendorPrefixes: -ms-, -o-, '';
+    @prop: text-overflow;
+    .prefix();
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: no-wrap;
+    word-wrap: normal;
+    & when (@ie-legacy) {
+        *display: inline;
+        *zoom: 1;
+    }
+}

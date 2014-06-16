@@ -1,0 +1,11 @@
+.repeat(...) {}
+.repeat(@word, @n) {.repeat(@word, '', @n);}
+.repeat(@word, @glue, @n) {
+    .repeat(@word, @add, @glue, @n) when (@n > 0) {
+        .-return(@wordResult, @n2) when (@n2 = 1) {@string: ~'@{wordResult}';}
+        .-return(@word, @n);
+        .repeat('@{word}@{glue}@{add}', @add, @glue, @n - 1);
+    }
+    .repeat(@word, @word, @glue, @n);
+}
+.repeat(@word, @glue, @n) when (@n < 1) {@string: ~'';}

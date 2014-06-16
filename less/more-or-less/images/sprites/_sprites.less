@@ -1,0 +1,21 @@
+@import '../../_fn';
+
+.sprites (@img;@width;@height;@step;@list...) {
+    background-color: transparent;
+    background-image: url('@{img}');
+    background-size: @width @height;
+    background-repeat: no-repeat;
+    .-i(@in;@st) {
+        @pos: (-(@st * @in) + @st);
+        @class: e(extract(@list, @in));
+    }
+    .for(1,length(@list));
+    .-each(@i) when (@height = auto) {
+        .-i(@i;@step);
+        &.@{class}{background-position: 0 e('@{pos}px');}
+    }
+    .-each(@i) when (@width = auto) {
+        .-i(@i;@step);
+        &.@{class}{background-position: e('@{pos}px') 0;}
+    }
+}

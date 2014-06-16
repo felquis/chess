@@ -1,0 +1,15 @@
+// .slide-out
+
+.slide-out(@direction: left;) {
+    & {
+        .keyframes(slide-out);.-frames(@-...){
+            0% {
+                @{direction}: 0;
+            }
+
+            100% {
+                @{direction}: -100%;
+            }
+        }
+    }
+}

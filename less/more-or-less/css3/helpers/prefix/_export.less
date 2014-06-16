@@ -1,0 +1,33 @@
+@import '../../vars/_prefix';
+@import '../../../fn/_inArray';
+@import '../../../fn/_scope';
+@import '../../../fn/_if';
+.prefix(...) {
+    @needPrefix: transition-property, transition;
+    .for(@vendorPrefixes); .-each(@i){
+        .inArray(@needPrefix, @prop);
+        .if(@-, {
+            .-then(){
+                @transform: replace('@{values}', 'transform', '@{i}transform');
+                @box-shadow: replace('@{transform}', 'box-shadow', '@{i}box-shadow');
+                @end: e(@box-shadow);
+                @return: @end;
+            }
+            .-else() {
+                @return: @values;
+            }
+        });
+        .scope({
+            .inArray(@prefixes, @i);
+            .if(@-,{
+                .-then(){
+                    @eProp: e('@{i}@{prop}');
+                    @{eProp}: @return;
+                }
+                .-else(){
+                    @{prop}: @values;
+                }
+            });
+        });
+    }
+}

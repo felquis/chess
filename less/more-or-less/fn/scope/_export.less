@@ -1,0 +1,22 @@
+@import "../_if";
+.scope(...) {}
+.scope(@rules) {
+    .-isrules(@test) {
+        .-return(...) {@bool: false;}
+        .-return(@test) when not (iskeyword(@test))
+                         and not (isstring(@test))
+                         and not (isnumber(@test))
+                         and not (iscolor(@test))
+                         and not (issurl(@test)) {
+            @bool: true;
+        }
+        .-return(@test) when (default()) {@bool: false;}
+        .-return(@test);
+    }
+    .-isrules(@rules);
+    .if(@bool, {
+        .-then(){
+            @rules();
+        }
+    });
+}

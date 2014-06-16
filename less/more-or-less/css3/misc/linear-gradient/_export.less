@@ -1,0 +1,20 @@
+@import '../_background-image';
+.old-webkit-gradient(...){}
+.old-webkit-gradient(@direction, @start, @end) when ('@{direction}' = 'to bottom') {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@start), color-stop(100%,@end));
+}
+.old-webkit-gradient(@direction, @start, @end) when ('@{direction}' = 'to right') {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%,@start), color-stop(100%,@end));
+}
+.old-webkit-gradient(@direction, @start, @end) when ('@{direction}' = 'to bottom right') {
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0%,@start), color-stop(100%,@end));
+}
+.linear-gradient(@direction, @start, @end) {
+    & when (@svg-fallback) {
+        background-image: svg-gradient(@direction, @start, @end);
+    }
+    & when (@webkit-legacy) {
+        .old-webkit-gradient(@direction, @start, @end);
+    }
+    .background-image(linear-gradient(@direction, @start, @end));
+}

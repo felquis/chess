@@ -1,0 +1,22 @@
+@import '../../vars/_prefix';
+@import '../../../fn/_if';
+@import '../../../fn/_scope';
+@import '../../../fn/_inArray';
+.calc(@prop; @value) {
+    @vendorPrefixes: -webkit-, -moz-, '';
+    .for(@vendorPrefixes);.-each(@i) {
+        .scope({
+            .inArray(@prefixes, @i);
+            .if((@-), {
+                .-then(){
+                    @eValue: e('@{value}');
+                    @{prop}: e('@{i}calc(@{eValue})');
+                }
+                .-else() {
+                    @eValue: e('@{value}');
+                    @{prop}: e('calc(@{eValue})');
+                }
+            });
+        });
+    }
+}

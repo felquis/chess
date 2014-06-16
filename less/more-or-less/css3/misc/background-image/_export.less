@@ -1,0 +1,28 @@
+@import '../../vars/_prefix';
+@import '../../../fn/_inArray';
+@import '../../../fn/_if';
+.background-image(@values...) {
+    @vendorPrefixes: -webkit-, -moz-, -o-, '';
+    .for(@vendorPrefixes);.-each(@i) {
+        .scope({
+            .inArray(@prefixes, @i);
+            .if(@-,{
+                .-then(){
+                    @to-top-left: replace('@{values}', 'to top left', 'bottom right' );
+                    @to-bottom-right: replace('@{to-top-left}', 'to bottom right', 'top left' );
+                    @to-top: replace('@{values}', 'to top', 'bottom' );
+                    @to-bottom: replace('@{to-top}', 'to bottom', 'top' );
+                    @to-left: replace('@{to-bottom}', 'to left', 'right' );
+                    @to-right: replace('@{to-left}', 'to right', 'left' );
+                    @linear-gradient: replace('@{to-right}', 'linear-gradient', '@{i}linear-gradient' );
+                    @radial-gradient: replace('@{linear-gradient}', 'radial-gradient', '@{i}radial-gradient' );
+                    @end: @radial-gradient;
+                    background-image: e(@end);
+                }
+                .-else() {
+                    background-image: @values;
+                }
+            });
+        });
+    }
+}
