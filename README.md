@@ -1,7 +1,9 @@
 The Chess
 =========
 
-HTML Chess, um projeto experimental.
+HTML Chess, um projeto experimental
+
+Com base no [The Chess](https://github.com/vanessametonini/the-chess)
 
 ## O inicio
 O The Chess começou quando no www2013, teve um desafio que era criar um tabuleiro de Xadrez com HTML, CSS sem imagens, como jurados do desafio tinha nada menos que o cara que criou o CSS o Bert Bos. O desafio foi aceito.
