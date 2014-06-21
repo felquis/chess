@@ -37,6 +37,13 @@ module.exports = function(grunt) {
         src: ['lib/**/*.js', '!lib/vendors/*']
       }
     },
+    uglify: {
+      dist: {
+        files: {
+          'build/lib/main.js': ['lib/main.js']
+        }
+      }
+    },
     watch: {
       lessfiles: {
         files: 'less/*',
@@ -58,6 +65,16 @@ module.exports = function(grunt) {
         files: {
           "css/main.css": "less/main.less"
         }
+      },
+      dist: {
+        options: {
+          compress: true,
+          cleancss: true,
+          ieCompat: false
+        },
+        files: {
+          "build/css/main.css": "less/main.less"
+        }
       }
     },
     connect: {
@@ -69,16 +86,33 @@ module.exports = function(grunt) {
           livereload: true
         }
       }
+    },
+    copy: {
+      dist: {
+        files: [
+          {expand: true, src: ['index.html'], dest: 'build/'},
+          {expand: true, src: ['lib/vendors/*'], dest: 'build/', filter: 'isFile'}
+        ]
+      }
+    },
+    clean: {
+      dist: {
+        src: ['./build']
+      }
     }
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'less:development', 'connect:server', 'watch']);
+  grunt.registerTask('build', ['clean:dist', 'jshint', 'less:dist', 'uglify:dist', 'copy:dist']);
 
 };
