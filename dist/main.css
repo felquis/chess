@@ -1,0 +1,466 @@
+/*
+    Let's :dancer:
+*/
+/***
+    O resultado será em classes no CSS como:
+    .square-a-1
+    .square-a-2
+    .square-h-6
+    ...
+
+    Posiciona todas as peças no tabuleiro com base em um tabuleiro
+    com casas de tamanho 74x74
+
+***/
+.piece {
+  position: absolute;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  width: 73px;
+  height: 73px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  z-index: 10;
+}
+.piece:before {
+  font-size: 50px;
+  font-style: normal;
+}
+/***
+    Está funcão recebe dois parametros
+    @letter: que é a letra de uma casa do tabuleiro;
+    @number: que é o número de uma casa do tabuleiro;
+
+    A funcão calcula o bottom e top para posicionar a peça
+    no tabuleiro
+***/
+/***
+    Este loop percorre a lista @squareLetters
+***/
+/***
+    Este loop percorre as 8 casas de cada letra
+
+    A função resposável por escrever a classe no CSS é a .writeSquarePosition
+***/
+.square-a1 {
+  bottom: 0px;
+  left: 0px;
+}
+.square-a2 {
+  bottom: 73px;
+  left: 0px;
+}
+.square-a3 {
+  bottom: 146px;
+  left: 0px;
+}
+.square-a4 {
+  bottom: 219px;
+  left: 0px;
+}
+.square-a5 {
+  bottom: 292px;
+  left: 0px;
+}
+.square-a6 {
+  bottom: 365px;
+  left: 0px;
+}
+.square-a7 {
+  bottom: 438px;
+  left: 0px;
+}
+.square-a8 {
+  bottom: 511px;
+  left: 0px;
+}
+.square-b1 {
+  bottom: 0px;
+  left: 73px;
+}
+.square-b2 {
+  bottom: 73px;
+  left: 73px;
+}
+.square-b3 {
+  bottom: 146px;
+  left: 73px;
+}
+.square-b4 {
+  bottom: 219px;
+  left: 73px;
+}
+.square-b5 {
+  bottom: 292px;
+  left: 73px;
+}
+.square-b6 {
+  bottom: 365px;
+  left: 73px;
+}
+.square-b7 {
+  bottom: 438px;
+  left: 73px;
+}
+.square-b8 {
+  bottom: 511px;
+  left: 73px;
+}
+.square-c1 {
+  bottom: 0px;
+  left: 146px;
+}
+.square-c2 {
+  bottom: 73px;
+  left: 146px;
+}
+.square-c3 {
+  bottom: 146px;
+  left: 146px;
+}
+.square-c4 {
+  bottom: 219px;
+  left: 146px;
+}
+.square-c5 {
+  bottom: 292px;
+  left: 146px;
+}
+.square-c6 {
+  bottom: 365px;
+  left: 146px;
+}
+.square-c7 {
+  bottom: 438px;
+  left: 146px;
+}
+.square-c8 {
+  bottom: 511px;
+  left: 146px;
+}
+.square-d1 {
+  bottom: 0px;
+  left: 219px;
+}
+.square-d2 {
+  bottom: 73px;
+  left: 219px;
+}
+.square-d3 {
+  bottom: 146px;
+  left: 219px;
+}
+.square-d4 {
+  bottom: 219px;
+  left: 219px;
+}
+.square-d5 {
+  bottom: 292px;
+  left: 219px;
+}
+.square-d6 {
+  bottom: 365px;
+  left: 219px;
+}
+.square-d7 {
+  bottom: 438px;
+  left: 219px;
+}
+.square-d8 {
+  bottom: 511px;
+  left: 219px;
+}
+.square-e1 {
+  bottom: 0px;
+  left: 292px;
+}
+.square-e2 {
+  bottom: 73px;
+  left: 292px;
+}
+.square-e3 {
+  bottom: 146px;
+  left: 292px;
+}
+.square-e4 {
+  bottom: 219px;
+  left: 292px;
+}
+.square-e5 {
+  bottom: 292px;
+  left: 292px;
+}
+.square-e6 {
+  bottom: 365px;
+  left: 292px;
+}
+.square-e7 {
+  bottom: 438px;
+  left: 292px;
+}
+.square-e8 {
+  bottom: 511px;
+  left: 292px;
+}
+.square-f1 {
+  bottom: 0px;
+  left: 365px;
+}
+.square-f2 {
+  bottom: 73px;
+  left: 365px;
+}
+.square-f3 {
+  bottom: 146px;
+  left: 365px;
+}
+.square-f4 {
+  bottom: 219px;
+  left: 365px;
+}
+.square-f5 {
+  bottom: 292px;
+  left: 365px;
+}
+.square-f6 {
+  bottom: 365px;
+  left: 365px;
+}
+.square-f7 {
+  bottom: 438px;
+  left: 365px;
+}
+.square-f8 {
+  bottom: 511px;
+  left: 365px;
+}
+.square-g1 {
+  bottom: 0px;
+  left: 438px;
+}
+.square-g2 {
+  bottom: 73px;
+  left: 438px;
+}
+.square-g3 {
+  bottom: 146px;
+  left: 438px;
+}
+.square-g4 {
+  bottom: 219px;
+  left: 438px;
+}
+.square-g5 {
+  bottom: 292px;
+  left: 438px;
+}
+.square-g6 {
+  bottom: 365px;
+  left: 438px;
+}
+.square-g7 {
+  bottom: 438px;
+  left: 438px;
+}
+.square-g8 {
+  bottom: 511px;
+  left: 438px;
+}
+.square-h1 {
+  bottom: 0px;
+  left: 511px;
+}
+.square-h2 {
+  bottom: 73px;
+  left: 511px;
+}
+.square-h3 {
+  bottom: 146px;
+  left: 511px;
+}
+.square-h4 {
+  bottom: 219px;
+  left: 511px;
+}
+.square-h5 {
+  bottom: 292px;
+  left: 511px;
+}
+.square-h6 {
+  bottom: 365px;
+  left: 511px;
+}
+.square-h7 {
+  bottom: 438px;
+  left: 511px;
+}
+.square-h8 {
+  bottom: 511px;
+  left: 511px;
+}
+/*
+    Numbers
+*/
+.square-line {
+  position: relative;
+  display: flex;
+  height: 73px;
+  width: 100%;
+}
+.square-line:before {
+  counter-increment: numero -1;
+  content: counters(numero, "");
+  height: 73px;
+  width: 36.5px;
+  left: -36.5px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+/*
+    Letters
+*/
+.square-line:nth-child(8) .square::before {
+  position: absolute;
+  font-style: normal;
+  bottom: -36.5px;
+  width: 73px;
+  height: 36.5px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.square-line:nth-child(8) {
+  counter-reset: letters;
+}
+.square-line:nth-child(8) .square::before {
+  counter-increment: letters;
+  content: counter(letters, lower-alpha);
+}
+.selected {
+  box-shadow: 0 0 5px 2px #00FF14, 0 0 15px 4px #1297FF;
+  z-index: 10;
+}
+.selected.will-capture-true {
+  box-shadow: 0 0 5px 2px #F00, 0 0 15px 4px #FF1284;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.chessboard {
+  width: 584px;
+  height: 584px;
+  position: relative;
+  counter-reset: numero 9;
+}
+/*
+    Squares
+*/
+.square {
+  width: 73px;
+  height: 73px;
+  outline: 1px solid #000;
+  background: #e0e0e0;
+  position: relative;
+}
+.square-line:nth-child(odd) .square:nth-child(odd),
+.square-line:nth-child(even) .square:nth-child(even) {
+  background: #fff;
+}
+/*
+    Piece's images
+*/
+/* Pawn */
+.pawn.white:before {
+  content: "\2659";
+}
+.pawn.black:before {
+  content: "\265F";
+}
+/* Knight */
+.knight.white:before {
+  content: "\2658";
+}
+.knight.black:before {
+  content: "\265E";
+}
+/* Bishop */
+.bishop.white:before {
+  content: "\2657";
+}
+.bishop.black:before {
+  content: "\265D";
+}
+/* Rook */
+.rook.white:before {
+  content: "\2656";
+}
+.rook.black:before {
+  content: "\265C";
+}
+/* Queen */
+.queen.white:before {
+  content: "\2655";
+}
+.queen.black:before {
+  content: "\265B";
+}
+/* King */
+.king.white:before {
+  content: "\2654";
+}
+.king.black:before {
+  content: "\265A";
+}
+/*
+    Wood theme
+*/
+.chessboard.wood .square {
+  background: #533221;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #533221), color-stop(3%, #76472b), color-stop(5%, #533221), color-stop(8%, #76472b), color-stop(10%, #533221), color-stop(13%, #76472b), color-stop(16%, #533221), color-stop(24%, #76472b), color-stop(26%, #533221), color-stop(29%, #76472b), color-stop(33%, #533221), color-stop(37%, #76472b), color-stop(41%, #533221), color-stop(44%, #76472b), color-stop(48%, #533221), color-stop(52%, #76472b), color-stop(59%, #533221), color-stop(68%, #76472b), color-stop(73%, #533221), color-stop(78%, #76472b), color-stop(81%, #533221), color-stop(83%, #76472b), color-stop(86%, #533221), color-stop(88%, #76472b), color-stop(90%, #533221), color-stop(93%, #76472b), color-stop(95%, #533221), color-stop(98%, #76472b), color-stop(100%, #533221));
+  background: linear-gradient(to right, #533221 0%, #76472b 3%, #533221 5%, #76472b 8%, #533221 10%, #76472b 13%, #533221 16%, #76472b 24%, #533221 26%, #76472b 29%, #533221 33%, #76472b 37%, #533221 41%, #76472b 44%, #533221 48%, #76472b 52%, #533221 59%, #76472b 68%, #533221 73%, #76472b 78%, #533221 81%, #76472b 83%, #533221 86%, #76472b 88%, #533221 90%, #76472b 93%, #533221 95%, #76472b 98%, #533221 100%);
+}
+.wood .square-line:nth-child(odd) .square:nth-child(odd),
+.wood .square-line:nth-child(even) .square:nth-child(even) {
+  background: #d6ad7c;
+  background: -webkit-gradient(linear, left top, right top, color-stop(1%, #d6ad7c), color-stop(5%, #dcb687), color-stop(6%, #dab282), color-stop(10%, #d4aa7a), color-stop(14%, #e0ba8d), color-stop(17%, #d4aa7a), color-stop(21%, #e0ba8d), color-stop(24%, #d4aa7a), color-stop(26%, #e0ba8d), color-stop(29%, #d4aa7a), color-stop(32%, #e0ba8d), color-stop(34%, #d4aa7a), color-stop(37%, #d4aa7a), color-stop(39%, #e0ba8d), color-stop(46%, #d4aa7a), color-stop(46%, #e0ba8d), color-stop(50%, #e0ba8d), color-stop(54%, #d4aa7a), color-stop(56%, #e0ba8d), color-stop(64%, #d4aa7a), color-stop(69%, #e0ba8d), color-stop(70%, #d4aa7a), color-stop(80%, #e0ba8d), color-stop(83%, #d4aa7a), color-stop(86%, #e0ba8d), color-stop(89%, #ddb07c), color-stop(96%, #e0ba8d), color-stop(97%, #e0ba8d), color-stop(100%, #d6ad7c));
+  background: linear-gradient(to right, #d6ad7c 1%, #dcb687 5%, #dab282 6%, #d4aa7a 10%, #e0ba8d 14%, #d4aa7a 17%, #e0ba8d 21%, #d4aa7a 24%, #e0ba8d 26%, #d4aa7a 29%, #e0ba8d 32%, #d4aa7a 34%, #d4aa7a 37%, #e0ba8d 39%, #d4aa7a 46%, #e0ba8d 46%, #e0ba8d 50%, #d4aa7a 54%, #e0ba8d 56%, #d4aa7a 64%, #e0ba8d 69%, #d4aa7a 70%, #e0ba8d 80%, #d4aa7a 83%, #e0ba8d 86%, #ddb07c 89%, #e0ba8d 96%, #e0ba8d 97%, #d6ad7c 100%);
+}
+.wood .piece.white {
+  color: #FFF;
+}
+/*
+    Piece's images for Wood theme
+*/
+/* Pawn */
+.wood .pawn.white:before {
+  content: "\265F";
+}
+/* Knight */
+.wood .knight.white:before {
+  content: "\265E";
+}
+/* Bishop */
+.wood .bishop.white:before {
+  content: "\265D";
+}
+/* Rook */
+.wood .rook.white:before {
+  content: "\265C";
+}
+/* Queen */
+.wood .queen.white:before {
+  content: "\265B";
+}
+/* King */
+.wood .king.white:before {
+  content: "\265A";
+}

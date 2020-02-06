@@ -3,14 +3,16 @@ The Chess
 
 HTML Chess, um projeto experimental
 
-Com base no [The Chess](https://github.com/vanessametonini/the-chess)
+A primeira UI foi feita em conjuntom com a Vanessa Tonini no repo [The Chess](https://github.com/vanessametonini/the-chess), porteriormente adicionei o Chess.js ao projeto para dar vida ao jogo.
+
+[Demostração](https://ccdse.csb.app/)
 
 ## O inicio
-O The Chess começou quando no www2013, teve um desafio que era criar um tabuleiro de Xadrez com HTML, CSS sem imagens, como jurados do desafio tinha nada menos que o cara que criou o CSS o Bert Bos. O desafio foi aceito.
+O The Chess começou quando no www2013, teve um desafio que era criar um tabuleiro de Xadrez com HTML, CSS sem imagens, como jurados do desafio tinha nada menos que o cara que criou o CSS [Bert Bos](https://en.wikipedia.org/wiki/Bert_Bos). O desafio foi aceito.
 
 ## Como rodar local
 
-Você precisa do [GIT](http://git-scm.com/) e [NodeJS](http://nodejs.org/) previamente instalado, depois, você precisa do [Grunt-CLI](https://github.com/gruntjs/grunt-cli) instalado.
+Você precisa previamente instalado o nvm instalado para usar o [NodeJS](http://nodejs.org/), depois, você precisa rodar `npm install`, o servidor http local será http://localhost:2222 você pode mudar isso no arquivo `package.json`.
 
 1. Clone o repositório e entre na pasta do repositório
 
